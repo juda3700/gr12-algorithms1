@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithms Assignment #1</title>
+<script src="lib.js"></script>
+</head>
+<body>
+<div id="questions"></div>
+<script>
+    'use strict'
+    
+    renderQuestion("Enter a word:", function(print, word) {
+        print(`The word is ${word.length} letters long`)
+        print(`The word in uppercase is ${word.toUpperCase()}`)
+        print(`The third letter of the word is ${word.charAt(2)}`)
+        word = word.toLowerCase()
+        if(word.indexOf('e')==-1){
+            print('e is not in your word')
+        }
+        else{
+            print(`The position of the first e in the word is ${word.indexOf('e')+1}`)
+        }
+    })
+
+    renderQuestion("Enter a word over 5 characters:", function(print, word) {
+        if( word.length >= 5){
+            print(word.substring(2,5))
+        }
+        else{
+            print('Your word is not long enough.')
+        }
+    })
+
+    renderQuestion("Do you prefer cats or dogs?", function(print, word){
+        word = word.toLowerCase()
+
+        if(word.indexOf('cat')>=0){
+            print('Cats are the best')
+        }
+        else if(word.indexOf('dog')>= 0){
+            print('Dogs stink')
+        }
+        else{
+            print('You did not answer correctly')
+        }
+
+    })
+
+    renderQuestion("Input a filename.(ie. file.png)", function(print, word){
+        let dotPos = word.lastIndexOf('.')
+        print(`Basename:${word.substring(0, dotPos)}`)
+        print(`Extension:${word.substring(dotPos+1, word.length)}`)
+    })
+
+
+</script>
+</body>
+</html>
