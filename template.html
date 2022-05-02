@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithms Assignment Template</title>
+<script src="lib.js"></script>
+</head>
+<body>
+<div id="questions"></div>
+<script>
+    'use strict'
+    
+    // Single Question Example
+    renderQuestion("What is your name?", function(print, ans) {
+        print(`Hi there ${ans}`)
+    })
+
+
+    // Multi Question Example
+    let age 
+    renderQuestion("How old are you?", function(print, ans) {
+        age = ans // copy the "ans" parameter to the global "age" variable for later use
+        print("Thank you. Please continue on to the next question.")
+    })
+
+    renderQuestion("What is your favourite food?", function(print, ans) {
+        print(`You are ${age} years old and you like ${ans}.`)
+    })
+
+   
+
+</script>
+</body>
+</html>
