@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithms Assignment #2</title>
+<script src="lib.js"></script>
+</head>
+<body>
+<div id="questions"></div>
+<script>
+    'use strict'
+    
+    // STEP 1
+    renderQuestion("Enter in a number.", function(print, ans) {
+        if(!(isNaN(ans))){
+
+            let answerPlusOne = Number(ans) + 1
+            print(`Your answer plus one is ${answerPlusOne}.`)
+            print("Probably not the result you expected.")
+        }
+        else{
+            print(`Your answer did not contain a number.`)
+        }
+    })
+
+    //STEP 2
+    renderQuestion("Enter in a number between 1 and10.", function(print, ans) {
+        if((isNaN(ans))==true){
+            print(`Your answer did not contain a number.`)
+        }
+        else if(0<Number(ans) && 10 > Number(ans)){
+            let answerPlusOne = Number(ans) + 1
+            print(`Your answer plus one is ${answerPlusOne}.`)
+            print("Probably not the result you expected.")
+        }
+
+        else{
+            print(`Your input is not between 1 and 10`)
+        }
+
+    })
+
+    //STEP 3
+    renderQuestion("Do you have a promo code for your purchase?", function(print, ans){
+        let isPromo
+        if(ans.toLowerCase() == 'yes' || ans.toLowerCase() == 'y'){
+            isPromo = true
+        }
+
+        else if(ans.toLowerCase() == 'no' || ans.toLowerCase()== 'n'){
+            isPromo = false
+        }
+
+        else{
+            print('Your answer is not in the correct form. (y/yes or n/no)')
+        }
+        print(isPromo)
+    })
+
+
+
+
+</script>
+</body>
+</html>
