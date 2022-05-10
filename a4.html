@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithms Assignment #4</title>
+<script src="lib.js"></script>
+</head>
+<body>
+<div id="questions"></div>
+<script>
+    'use strict'
+    
+    let names = [
+        "aiden", "alex", "amy", "austen", "austin", "chase", "holland", "jack", "jaiden", "joshua",
+        "judah", "kevin", "leon", "mason", "nicholas", "noah", "nolin", "rayhaan", "rylan", "ziya"
+    ]
+    let binarySearchCount
+
+    renderQuestion("What name do you want to find using linear search?", function(print, ans) {
+        let target = ans.toLowerCase()
+        var found = false
+
+        // Start coding step 1 here:
+
+        for(var i = 0; i < names.length; i++){
+            if( names[i]== target){
+                found = true
+                print("The target name was found in the "+(i+1)+" position.")
+            }
+        }
+        if(!found){
+            print("The target is not in the array.")
+            print(names.length+' positions were searched.')
+        }
+    
+        
+
+    })
+
+    function binarySearch(arr, target)  {
+        binarySearchCount++
+        console.log(arr)
+        var midpoint = Math.round((arr.length)/2)
+        var curName = arr[midpoint]
+        if(curName == target){
+            return true
+        }
+        else if(arr.length < 2){
+            return false
+        }
+
+        let newArr
+        if(curName > target){
+            newArr = arr.splice(0, midpoint)
+        }
+        else{
+            newArr = arr.splice(midpoint, arr.length)
+        }
+
+        binarySearch(newArr, target)
+
+        // Start coding step 2 here:
+
+    }
+
+    renderQuestion("What name do you want to find using binary search?", function(print, ans) {
+        binarySearchCount = 0
+        let target = ans.toLowerCase()
+        let result = binarySearch(names, target)
+        if (result)
+            print(`The name was found after searching ${binarySearchCount} positions`)
+        else
+            print(`The name wasn't found. Searched ${binarySearchCount} positions.`)
+    })
+
+</script>
+</body>
+</html>
