@@ -10,10 +10,47 @@
     'use strict'
     
     let fruit = ["apple", "banana", "pear", "plum", "blueberry", "kiwi", "watermelon", "grape"]
-
+    //STEP 1
     renderQuestion("Enter in a fruit:", function(print, ans) {
-
+        var ansL = ans.toLowerCase()
+        if(fruit.includes(ansL)){
+            print(`Your answer was in the list at position ${fruit.indexOf(ansL)}`)
+        }
+        else{
+            fruit.push(ansL)
+            print("Your answer was not found and it was add to the list.")
+        }
     })
+
+    //STEP 2
+
+    renderQuestion("Do you want to pop or shift?", function(print, ans) {
+        print(`Before: ${fruit}`)
+        var ansL = ans.toLowerCase()
+        if(ansL == "pop"){
+            fruit.pop()
+        }
+        else if(ansL == "shift"){
+            fruit.shift()
+        }
+        else{
+            print("Your answer was not valid.")
+        }
+        
+        
+        
+        print(`After: ${fruit}`)
+    })
+
+    //STEP 3
+
+    renderQuestion("Enter a position to delete", function(print, ans) {
+        print(`Before: ${fruit}`)
+        fruit.splice(ans, 1)
+        print(`After: ${fruit}`)
+    })
+
+
 
 </script>
 </body>
