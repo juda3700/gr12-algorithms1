@@ -39,7 +39,7 @@
     function binarySearch(arr, target)  {
         binarySearchCount++
         console.log(arr)
-        var midpoint = Math.round((arr.length)/2)
+        var midpoint = Math.floor((arr.length)/2)
         var curName = arr[midpoint]
         if(curName == target){
             return true
@@ -53,10 +53,10 @@
             newArr = arr.splice(0, midpoint)
         }
         else{
-            newArr = arr.splice(midpoint, arr.length)
+            newArr = arr.splice(midpoint)
         }
 
-        binarySearch(newArr, target)
+        return binarySearch(newArr, target)
 
         // Start coding step 2 here:
 
@@ -78,8 +78,14 @@
 
 
     //   ANALYSIS
-    // judah(Linear:11. Binary: 1)
-    // holdan()
+    // judah(Linear:11 | Binary: 1)
+    // holand(Linear:10 | Binary: 4 )
+    // aiden(Linear:1 | Binary: 5)
+    // rylan(Linear: 19 | Binary: 4)
+    // mason(Linear: 10 | Binary: 4)
+    
+
+    // The analysis demonstrated that binary search was consistenly the same amount of searches while linear varies a lot. With binary being more effiecent in more cases. 
 
 
 </script>
