@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithms Assignment #4</title>
+<script src="lib.js"></script>
+<script>const print = (txt) => { document.getElementById("result").innerHTML = txt }
+</script>
+</head>
+<body>
+<pre id="result" style="font-size: 30px"></pre>
+<script>
+    'use strict'
+    
+    let unsorted = [50, 17, 12, 72, 54, 23, 9, 76, 67, 14] 
+    let sorted = []
+
+    // Start coding here:
+    while(unsorted.length > 0){
+        let min = unsorted[0]
+        let minPos = 0
+        for(var i = 0; i< unsorted.length; i++){
+            if(unsorted[i]> min){
+                min = unsorted[i]
+                minPos = i
+            }
+        }
+        sorted.push(min)
+        
+    }
+    
+
+    print(sorted)
+
+</script>
+</body>
+</html>
