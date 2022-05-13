@@ -50,6 +50,35 @@
         print(`After: ${fruit}`)
     })
 
+    //STEP 4
+
+    renderQuestion("Enter a position to delete", function(print, ans) {
+        print(`Before: ${fruit}`)
+        for (let i = 0; i < fruit.length; i++) {
+            if(i >= ans && i != fruit.length-1){
+                fruit[i] = fruit[i+1]
+            }
+        }
+        fruit.pop()
+        print(`After: ${fruit}`)
+    })
+
+    //STEP 5
+
+    renderQuestion("Enter a position to insert a peach", function(print, ans) {
+        print(`Before: ${fruit}`)
+        let temp = [] // Step 1 from above
+        for (let i = 0; i < fruit.length; i++) {
+            if(i == ans){
+                temp.push('peach')
+            }
+            temp.push(fruit[i])
+            
+        }
+        fruit = temp // Step 5 from above
+        print(`After: ${fruit}`)
+    })
+
 
 
 </script>
